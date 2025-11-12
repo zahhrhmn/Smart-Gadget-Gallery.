@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Smart Gadget Gallery</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- jQuery Mobile CSS -->
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+
+  <style>
+    /* PUTIH & BIRU THEME */
+    body {
+      background-color: #ffffff; /* putih penuh */
+      color: #003366; /* biru gelap */
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .ui-header, .ui-content {
+      background-color: #ffffff !important; /* putih juga */
+      color: #003366 !important;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .ui-header h1 {
+      text-align: center;
+      font-weight: bold;
+      color: #0056b3;
+    }
+
+    .card {
+      background-color: #ffffff; /* putih */
+      color: #003366;
+      border: 1px solid #cce0ff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .card-title {
+      font-weight: bold;
+    }
+
+    /* Butang utama (biru) */
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      color: #ffffff;
+      font-weight: 500;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    /* Butang sekunder */
+    .btn-secondary {
+      background-color: #f2f2f2;
+      color: #003366;
+      border: 1px solid #ccc;
+    }
+
+    .btn-secondary:hover {
+      background-color: #e6e6e6;
+    }
+
+    /* Modal */
+    .modal-content {
+      background-color: #ffffff;
+      color: #003366;
+      border: 1px solid #cce0ff;
+    }
+
+    .modal-title {
+      font-weight: bold;
+      color: #0056b3;
+      text-align: center;
+      width: 100%;
+    }
+
+    /* Page background */
+    .ui-page, .ui-content, .container {
+      background-color: #ffffff !important;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ======= PAGE GALLERY ======= -->
+<div data-role="page" id="galleryPage">
+
+  <div data-role="header" data-theme="b">
+    <h1>Smart Gadget Gallery</h1>
+    <a href="#aboutPage" data-transition="slide" class="btn btn-link text-primary fw-bold">About</a>
+  </div>
+
+  <div role="main" class="ui-content">
+    <div class="container mt-3">
+      <div class="row justify-content-center">
+
+        <!-- Produk 1 -->
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card product-card">
+            <img src="images/smartphone.jpg" class="card-img-top" alt="Smartphone">
+            <div class="card-body text-center">
+              <h5 class="card-title">Iphone 17 pro</h5>
+              <button class="btn btn-primary view-details"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-name="Iphone 17 pro"
+                data-price="RM 5,500"
+                data-desc="Smartphone with a powerful and premium smartphone featuring the A19 Pro chip, a 6.3-inch Super Retina XDR display, and a triple 48 MP camera system for exceptional performance and photography"
+                data-img="images/smartphone.jpg">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 2 -->
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card product-card">
+            <img src="images/earbuds.jpg" class="card-img-top" alt="Laptop">
+            <div class="card-body text-center">
+              <h5 class="card-title">Airpods Pro 3</h5>
+              <button class="btn btn-primary view-details"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-name="Airpods Pro 3"
+                data-price="RM 999"
+                data-desc="AirPods with advanced noise cancellation, improved sound quality, and a new USB-C MagSafe charging case offers an exceptional wireless listening experience."
+                data-img="images/earbuds.jpg">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 3 -->
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card product-card">
+            <img src="images/smartwatch.jpg" class="card-img-top" alt="Smartwatch">
+            <div class="card-body text-center">
+              <h5 class="card-title">Apple Watch Series 11</h5>
+              <button class="btn btn-primary view-details"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-name="Apple Watch Series 11"
+                data-price="RM 1,799"
+                data-desc="Smartwatch with up to 24 hours of battery life, 5G connectivity, and enhanced health tracking delivers a sleek smartwatch upgrade."
+                data-img="images/smartwatch.jpg">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Produk 4 -->
+        <div class="col-md-6 col-lg-3 mb-3">
+          <div class="card product-card">
+            <img src="images/speaker.jpg" class="card-img-top" alt="Earbuds">
+            <div class="card-body text-center">
+              <h5 class="card-title">Wireless Speaker</h5>
+              <button class="btn btn-primary view-details"
+                data-bs-toggle="modal" data-bs-target="#productModal"
+                data-name="Wireless Speaker"
+                data-price="RM 779"
+                data-desc="Speaker with powerful room-filling sound, IP67 dust & water resistance, up to 24 hours of battery life and a USB-C port that can even charge your phone."
+                data-img="images/speaker.jpg">
+                View Details
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= PAGE ABOUT ======= -->
+<div data-role="page" id="aboutPage">
+  <div data-role="header" data-theme="b">
+    <h1>About</h1>
+    <a href="#galleryPage" data-transition="slide" data-direction="reverse" class="btn btn-link text-primary fw-bold">Back</a>
+  </div>
+  <div role="main" class="ui-content">
+    <div class="container mt-4 text-center">
+      <h3>About Smart Gadget Gallery</h3>
+      <p>
+       Smart Gadget Gallery is a simple website that showcases the latest Apple smart devices and was created by students as part of a Web Development practical project.
+      </p>	
+	<!-- Developer Info -->
+  <div class ="developer-info">
+    <h4>Developer Information</h4>
+	<ul>
+	  <p><strong>Name:</strong> Nurul Azizah Binti Abdul Rahman</p>
+	  <p><strong>Student ID:</strong> 13DIT24F1121</p>
+	  <p><strong>Course:</strong> Information Technology</p>
+	<ul>
+  </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= MODAL PRODUK ======= -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 id="productModalLabel" class="modal-title w-100 text-center">Produk</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body text-center">
+        <img id="productImg" src="" alt="Gambar Produk" class="img-fluid mb-3" style="border-radius:10px;">
+        <p id="productDesc"></p>
+        <h6 id="productPrice" class="text-primary"></h6>
+      </div>
+      <div class="modal-footer justify-content-center">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======= SCRIPTS ======= -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $(".view-details").click(function(){
+    const name = $(this).data("name");
+    const price = $(this).data("price");
+    const desc = $(this).data("desc");
+    const img = $(this).data("img");
+
+    $("#productModalLabel").text(name);
+    $("#productDesc").text(desc);
+    $("#productPrice").text("Harga: " + price);
+    $("#productImg").attr("src", img);
+  });
+});
+</script>
+
+</body>
+</html>
+                                      
